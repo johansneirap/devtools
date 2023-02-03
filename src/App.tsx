@@ -1,7 +1,7 @@
 import "./App.css";
-import { BinaryToDecimal } from "./features/bin2dec";
+import MainLayout from "./layouts/MainLayout";
 function App() {
-  return <div className="App">{<BinaryToDecimal />}</div>;
+  return <MainLayout />;
 }
 
 export default App;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 const isValidBinary = (str: string) => !Boolean(str.match(/[^01]/g)?.length);
+
 const convertBinaryToDecimal = (binary: string) => {
   const binaryToDecimal = parseInt(binary, 2);
   return binaryToDecimal.toString();
@@ -30,7 +31,10 @@ export function useBinaryToDecimal() {
     onClick();
   };
 
-  const isConvertButtonDisabled = () => !isValidBinary(binary);
+  const isConvertButtonDisabled = () => {
+    if (!binary) return true;
+    return !isValidBinary(binary);
+  };
 
   return {
     binary,
